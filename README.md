@@ -5,16 +5,16 @@
 A production-ready RESTful backend API built with **FastAPI**, **PostgreSQL** (using raw SQL via `psycopg2`), and **JWT Authentication**. This application enables users to manage job search activities, track application metrics, apply complex dynamic filtering, and inspect salary analytics.
 
 
-## ✨ Key Features
+ Key Features
 
-- **🔐 Secure Authentication:** JWT bearer tokens with Argon2 password hashing using `pwdlib`.
-- **📝 Complete CRUD Operations:** Create, retrieve, update (PUT/PATCH), and delete job application records.
-- **🔍 Advanced Querying & Filtering:** Dynamic SQL filtering by status, employment type, salary threshold, and application date ranges.
-- **📊 Analytics & Insights:** Real-time aggregated summaries including application counts by status, employment type, hiring company, monthly trends, and salary distributions.
-- **⚡ Raw SQL Performance:** Direct PostgreSQL query handling with transaction management (`commit`/`rollback`).
-- **🛡️ Schema Validation:** Request and response model validation using Pydantic v2.
+->Authentication: JWT bearer tokens with Argon2 password hashing using `pwdlib`.
+->Complete CRUD Operations:Create, retrieve, update (PUT/PATCH), and delete job application records.
+->Advanced Querying & Filtering: Dynamic SQL filtering by status, employment type, salary threshold, and application date ranges.
+->Analytics & Insights: Real-time aggregated summaries including application counts by status, employment type, hiring company, monthly trends, and salary distributions.
+->Raw SQL Performance: Direct PostgreSQL query handling with transaction management (`commit`/`rollback`).
+ ->Schema Validation: Request and response model validation using Pydantic v2.
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -29,7 +29,7 @@ A production-ready RESTful backend API built with **FastAPI**, **PostgreSQL** (u
 
 # Project Structure
 
-```text
+
 job-application-tracker/
 ├── app/
 │   ├── main.py        # FastAPI routes, middleware & business logic
@@ -40,15 +40,15 @@ job-application-tracker/
 ├── screenshots/       # Documentation screenshots
 ├── .env               # Local environment variables
 └── README.md          # Project documentation
-```
+
 
 ---
 
-## 🗄️ Database Setup (PostgreSQL)
+#  Database Setup (PostgreSQL)
 
 Create a local PostgreSQL database named `job_tracker` and set up the following schema:
 
-```sql
+
 CREATE DATABASE job_tracker;
 
 -- Users table
@@ -75,66 +75,26 @@ CREATE TABLE applications (
     job_url TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
----
+# Getting Started
 
-## 🚀 Getting Started
 
-### 1. Prerequisites
-- Python 3.10+
-- PostgreSQL server running locally
 
-### 2. Clone the Repository
-```bash
-git clone https://github.com/your-username/job-application-tracker.git
-cd job-application-tracker
-```
-
-### 3. Create and Activate Virtual Environment
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# macOS / Linux
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 4. Install Dependencies
-```bash
-pip install fastapi uvicorn psycopg2-binary python-dotenv pyjwt pwdlib[argon2]
-```
-
-### 5. Environment Configuration
+# Environment Configuration
 Create a `.env` file in the project root directory and define your secret keys:
 
-```env
+.env
 JWT_SECRET_KEY=mzmyB89UNf2IXSvCgvrqZcCa87maQOCk4MCL-ozWkJ8
 JWT_ALGORITHM=HS256
-```
 
----
 
-#  Running the Server
-
-Start the Uvicorn development server:
-
-```bash
-python -m uvicorn app.main:app --reload
-```
-
-The server will spin up at `http://127.0.0.1:8000`.
-
----
 
 ##  API Documentation & Endpoints
 
 Access the interactive Swagger UI documentation directly at:  
- **`http://127.0.0.1:8000/docs`**
+ http://127.0.0.1:8000/docs
 
-### Key Endpoint Groups
+# Key Endpoint Groups
 
 | Method | Endpoint | Description | Auth Required |
 | :--- | :--- | :--- | :---: |
